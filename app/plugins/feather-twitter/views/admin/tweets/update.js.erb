@@ -1,0 +1,870 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Feather - Error</title>
+  <link type="text/css" charset="utf-8" rel="Stylesheet" media="all" href="/stylesheets/admin.css" /><link type="text/css" charset="utf-8" rel="Stylesheet" media="all" href="/stylesheets/exceptions.css" />
+  <script type="text/javascript" src="/javascripts/prototype.js"></script><script type="text/javascript" src="/javascripts/effects.js"></script><script type="text/javascript" src="/javascripts/admin.js"></script><script type="text/javascript" src="/javascripts/application.js"></script>
+</head>
+<body>
+  <div id="header">
+    <h1>Feather - Error</h1>
+  </div>
+  <div id="wrap">
+    <div id="content">
+      <div class="pad">
+        <h1></h1>
+	<h2>Controller 'Feather-twitter' not found</h2>
+	<h3>Parameters</h3>
+	<ul>
+			<li><strong>format:</strong> nil</li>
+			<li><strong>action:</strong> "views"</li>
+			<li><strong>id:</strong> "admin"</li>
+			<li><strong>controller:</strong> "feather-twitter"</li>
+		
+	</ul>
+
+	<h3>Session</h3>
+	<ul>
+		<li>None</li>			
+	</ul>
+
+	<h3>Cookies</h3>
+	<ul>
+		<li>None</li>			
+	</ul>
+<div class="break"></div>
+	<table class="trace">
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb
+							in "<strong>handle</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb&amp;line=52">52</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb&amp;line=47">47</a>      Merb.logger.debug(&quot;Routed to: #{request.route_params.inspect}&quot;)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb&amp;line=48">48</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb&amp;line=49">49</a>      cnt = controller_name.snake_case.to_const_string
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb&amp;line=50">50</a>      
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb&amp;line=51">51</a>      if !Merb::Controller._subclasses.include?(cnt)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb&amp;line=52">52</a><em>        raise Merb::ControllerExceptions::NotFound, &quot;Controller '#{cnt}' not found&quot;</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb&amp;line=53">53</a>      end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb&amp;line=54">54</a>      if cnt == &quot;Application&quot;
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb&amp;line=55">55</a>        raise Merb::ControllerExceptions::NotFound, &quot;The 'Application' controller has no pu<span class="more">......</span>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb&amp;line=56">56</a>      end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/dispatch/dispatcher.rb&amp;line=57">57</a>
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb
+							in "<strong>call</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb&amp;line=37">37</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb&amp;line=32">32</a>        else                              # No static file, let Merb handle it
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb&amp;line=33">33</a>          if path =~ /favicon\.ico/
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb&amp;line=34">34</a>            return [404, {&quot;Content-Type&quot;=&gt;&quot;text/html&quot;}, &quot;404 Not Found.&quot;]
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb&amp;line=35">35</a>          end  
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb&amp;line=36">36</a>          begin
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb&amp;line=37">37</a><em>            controller = ::Merb::Dispatcher.handle(env)</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb&amp;line=38">38</a>          rescue Object =&gt; e
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb&amp;line=39">39</a>            return [500, {&quot;Content-Type&quot;=&gt;&quot;text/html&quot;}, e.message + &quot;&lt;br/&gt;&quot; + e.backtrace.j<span class="more">......</span>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb&amp;line=40">40</a>          end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb&amp;line=41">41</a>          Merb.logger.info &quot;\n\n&quot;
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/application.rb&amp;line=42">42</a>          Merb.logger.flush
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb
+							in "<strong>call</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=19">19</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=14">14</a>    def call(env)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=15">15</a>      status = headers = body = nil
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=16">16</a>      raise ArgumentError, &quot;empty cascade&quot;  if @apps.empty?
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=17">17</a>      @apps.each { |app|
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=18">18</a>        begin
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=19">19</a><em>          status, headers, body = app.call(env)</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=20">20</a>          break  unless @catch.include?(status.to_i)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=21">21</a>        end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=22">22</a>      }
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=23">23</a>      [status, headers, body]
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=24">24</a>    end
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb
+							in "<strong>each</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=17">17</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=12">12</a>    end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=13">13</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=14">14</a>    def call(env)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=15">15</a>      status = headers = body = nil
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=16">16</a>      raise ArgumentError, &quot;empty cascade&quot;  if @apps.empty?
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=17">17</a><em>      @apps.each { |app|</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=18">18</a>        begin
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=19">19</a>          status, headers, body = app.call(env)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=20">20</a>          break  unless @catch.include?(status.to_i)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=21">21</a>        end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=22">22</a>      }
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb
+							in "<strong>call</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=17">17</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=12">12</a>    end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=13">13</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=14">14</a>    def call(env)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=15">15</a>      status = headers = body = nil
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=16">16</a>      raise ArgumentError, &quot;empty cascade&quot;  if @apps.empty?
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=17">17</a><em>      @apps.each { |app|</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=18">18</a>        begin
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=19">19</a>          status, headers, body = app.call(env)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=20">20</a>          break  unless @catch.include?(status.to_i)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=21">21</a>        end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/rack-0.3.0/lib/rack/cascade.rb&amp;line=22">22</a>      }
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb
+							in "<strong>process</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb&amp;line=72">72</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb&amp;line=67">67</a>                       &quot;rack.streaming&quot; =&gt; true
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb&amp;line=68">68</a>                     })
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb&amp;line=69">69</a>          env[&quot;QUERY_STRING&quot;] ||= &quot;&quot;
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb&amp;line=70">70</a>          env.delete &quot;PATH_INFO&quot;  if env[&quot;PATH_INFO&quot;] == &quot;&quot;
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb&amp;line=71">71</a>  
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb&amp;line=72">72</a><em>          status, headers, body = @app.call(env)</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb&amp;line=73">73</a>  
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb&amp;line=74">74</a>          begin
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb&amp;line=75">75</a>            response.status = status.to_i
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb&amp;line=76">76</a>            headers.each { |k, vs|
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/handler/mongrel.rb&amp;line=77">77</a>              vs.each { |v|
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb
+							in "<strong>process_client</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=159">159</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=154">154</a>              # request is good so far, continue processing the response
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=155">155</a>              response = HttpResponse.new(client)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=156">156</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=157">157</a>              # Process each handler in registered order until we run out or one finalizes <span class="more">......</span>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=158">158</a>              handlers.each do |handler|
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=159">159</a><em>                handler.process(request, response)</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=160">160</a>                break if response.done or client.closed?
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=161">161</a>              end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=162">162</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=163">163</a>              # And finally, if nobody closed the response off, we finalize it.
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=164">164</a>              unless response.done or client.closed? 
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb
+							in "<strong>each</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=158">158</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=153">153</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=154">154</a>              # request is good so far, continue processing the response
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=155">155</a>              response = HttpResponse.new(client)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=156">156</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=157">157</a>              # Process each handler in registered order until we run out or one finalizes <span class="more">......</span>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=158">158</a><em>              handlers.each do |handler|</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=159">159</a>                handler.process(request, response)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=160">160</a>                break if response.done or client.closed?
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=161">161</a>              end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=162">162</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=163">163</a>              # And finally, if nobody closed the response off, we finalize it.
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb
+							in "<strong>process_client</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=158">158</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=153">153</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=154">154</a>              # request is good so far, continue processing the response
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=155">155</a>              response = HttpResponse.new(client)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=156">156</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=157">157</a>              # Process each handler in registered order until we run out or one finalizes <span class="more">......</span>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=158">158</a><em>              handlers.each do |handler|</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=159">159</a>                handler.process(request, response)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=160">160</a>                break if response.done or client.closed?
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=161">161</a>              end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=162">162</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=163">163</a>              # And finally, if nobody closed the response off, we finalize it.
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb
+							in "<strong>run</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=285">285</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=280">280</a>              if worker_list.length &gt;= @num_processors
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=281">281</a>                STDERR.puts &quot;Server overloaded with #{worker_list.length} processors (#@num<span class="more">......</span>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=282">282</a>                client.close rescue nil
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=283">283</a>                reap_dead_workers(&quot;max processors&quot;)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=284">284</a>              else
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=285">285</a><em>                thread = Thread.new(client) {|c| process_client(c) }</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=286">286</a>                thread[:started_on] = Time.now
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=287">287</a>                @workers.add(thread)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=288">288</a>  
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=289">289</a>                sleep @throttle if @throttle &gt; 0
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=290">290</a>              end
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb
+							in "<strong>initialize</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=285">285</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=280">280</a>              if worker_list.length &gt;= @num_processors
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=281">281</a>                STDERR.puts &quot;Server overloaded with #{worker_list.length} processors (#@num<span class="more">......</span>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=282">282</a>                client.close rescue nil
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=283">283</a>                reap_dead_workers(&quot;max processors&quot;)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=284">284</a>              else
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=285">285</a><em>                thread = Thread.new(client) {|c| process_client(c) }</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=286">286</a>                thread[:started_on] = Time.now
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=287">287</a>                @workers.add(thread)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=288">288</a>  
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=289">289</a>                sleep @throttle if @throttle &gt; 0
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=290">290</a>              end
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb
+							in "<strong>new</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=285">285</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=280">280</a>              if worker_list.length &gt;= @num_processors
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=281">281</a>                STDERR.puts &quot;Server overloaded with #{worker_list.length} processors (#@num<span class="more">......</span>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=282">282</a>                client.close rescue nil
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=283">283</a>                reap_dead_workers(&quot;max processors&quot;)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=284">284</a>              else
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=285">285</a><em>                thread = Thread.new(client) {|c| process_client(c) }</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=286">286</a>                thread[:started_on] = Time.now
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=287">287</a>                @workers.add(thread)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=288">288</a>  
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=289">289</a>                sleep @throttle if @throttle &gt; 0
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=290">290</a>              end
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb
+							in "<strong>run</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=285">285</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=280">280</a>              if worker_list.length &gt;= @num_processors
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=281">281</a>                STDERR.puts &quot;Server overloaded with #{worker_list.length} processors (#@num<span class="more">......</span>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=282">282</a>                client.close rescue nil
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=283">283</a>                reap_dead_workers(&quot;max processors&quot;)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=284">284</a>              else
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=285">285</a><em>                thread = Thread.new(client) {|c| process_client(c) }</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=286">286</a>                thread[:started_on] = Time.now
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=287">287</a>                @workers.add(thread)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=288">288</a>  
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=289">289</a>                sleep @throttle if @throttle &gt; 0
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=290">290</a>              end
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb
+							in "<strong>initialize</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=268">268</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=263">263</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=264">264</a>      if defined?($tcp_defer_accept_opts) and $tcp_defer_accept_opts
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=265">265</a>        @socket.setsockopt(*$tcp_defer_accept_opts) rescue nil
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=266">266</a>      end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=267">267</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=268">268</a><em>      @acceptor = Thread.new do</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=269">269</a>        begin
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=270">270</a>          while true
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=271">271</a>            begin
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=272">272</a>              client = @socket.accept
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=273">273</a>  
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb
+							in "<strong>new</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=268">268</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=263">263</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=264">264</a>      if defined?($tcp_defer_accept_opts) and $tcp_defer_accept_opts
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=265">265</a>        @socket.setsockopt(*$tcp_defer_accept_opts) rescue nil
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=266">266</a>      end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=267">267</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=268">268</a><em>      @acceptor = Thread.new do</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=269">269</a>        begin
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=270">270</a>          while true
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=271">271</a>            begin
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=272">272</a>              client = @socket.accept
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=273">273</a>  
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb
+							in "<strong>run</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=268">268</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=263">263</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=264">264</a>      if defined?($tcp_defer_accept_opts) and $tcp_defer_accept_opts
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=265">265</a>        @socket.setsockopt(*$tcp_defer_accept_opts) rescue nil
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=266">266</a>      end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=267">267</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=268">268</a><em>      @acceptor = Thread.new do</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=269">269</a>        begin
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=270">270</a>          while true
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=271">271</a>            begin
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=272">272</a>              client = @socket.accept
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb&amp;line=273">273</a>  
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb
+							in "<strong>start</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb&amp;line=21">21</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb&amp;line=16">16</a>      # :app&lt;String&gt;&gt;:: The application name.
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb&amp;line=17">17</a>      def self.start(opts={})
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb&amp;line=18">18</a>        Merb.logger.warn!(&quot;Using Mongrel adapter&quot;)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb&amp;line=19">19</a>        server = ::Mongrel::HttpServer.new(opts[:host], opts[:port].to_i)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb&amp;line=20">20</a>        server.register('/', ::Merb::Rack::Handler::Mongrel.new(opts[:app]))
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb&amp;line=21">21</a><em>        server.run.join</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb&amp;line=22">22</a>      end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb&amp;line=23">23</a>    end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb&amp;line=24">24</a>  end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/rack/adapter/mongrel.rb&amp;line=25">25</a>end
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb
+							in "<strong>start</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb&amp;line=43">43</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb&amp;line=38">38</a>            raise &quot;Merb is already running on port: #{port}&quot;
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb&amp;line=39">39</a>          end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb&amp;line=40">40</a>        else
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb&amp;line=41">41</a>          trap('TERM') { exit }
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb&amp;line=42">42</a>          BootLoader.run
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb&amp;line=43">43</a><em>          Merb.adapter.start(Merb::Config.to_hash)</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb&amp;line=44">44</a>        end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb&amp;line=45">45</a>      end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb&amp;line=46">46</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb&amp;line=47">47</a>      # ==== Parameters
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core/server.rb&amp;line=48">48</a>      # port&lt;~to_s&gt;:: The port to check for Merb instances on.
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb
+							in "<strong>start</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb&amp;line=29">29</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb&amp;line=24">24</a>      else
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb&amp;line=25">25</a>        Merb::Config.parse_args(argv)
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb&amp;line=26">26</a>      end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb&amp;line=27">27</a>      Merb.environment = Merb::Config[:environment]
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb&amp;line=28">28</a>      Merb.root = Merb::Config[:merb_root]
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb&amp;line=29">29</a><em>      Merb::Server.start(Merb::Config[:port], Merb::Config[:cluster])</em>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb&amp;line=30">30</a>    end
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb&amp;line=31">31</a>    
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb&amp;line=32">32</a>    # Start the Merb environment, but only if it hasn't been loaded yet.
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb&amp;line=33">33</a>    #
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/lib/merb-core.rb&amp;line=34">34</a>    # ==== Parameters
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/bin/merb
+							in "<strong>?</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/bin/merb&amp;line=?">?</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/bin/merb&amp;line=1">1</a>#!/usr/bin/env ruby
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/bin/merb&amp;line=2">2</a>require &quot;merb-core&quot;
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/bin/merb&amp;line=3">3</a>
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/bin/merb&amp;line=4">4</a>unless %w[-a --adapter -i --irb-console -r --script-runner].any? { |o| ARGV.index(o) }
+
+<a href="txmt://open?url=file:///Library/Ruby/Gems/1.8/gems/merb-core-0.9.2/bin/merb&amp;line=5">5</a>  ARGV.push *%w[-a mongrel]
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/usr/bin/merb
+							in "<strong>load</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///usr/bin/merb&amp;line=19">19</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///usr/bin/merb&amp;line=14">14</a>  version = $1
+
+<a href="txmt://open?url=file:///usr/bin/merb&amp;line=15">15</a>  ARGV.shift
+
+<a href="txmt://open?url=file:///usr/bin/merb&amp;line=16">16</a>end
+
+<a href="txmt://open?url=file:///usr/bin/merb&amp;line=17">17</a>
+
+<a href="txmt://open?url=file:///usr/bin/merb&amp;line=18">18</a>gem 'merb-core', version
+
+<a href="txmt://open?url=file:///usr/bin/merb&amp;line=19">19</a><em>load 'merb'</em>
+					</td>
+				</tr>
+			</tbody>
+			<tbody class="close">
+				<tr class="file">
+					<td class="expand"></td>
+					<td class="path">
+						/usr/bin/merb
+							in "<strong>?</strong>"
+					</td>
+					<td class="line">
+						<a href="txmt://open?url=file:///usr/bin/merb&amp;line=?">?</a>&nbsp;
+					</td> 
+				</tr>
+				<tr class="source">
+					<td class="collapse"></td>
+					<td class="code" colspan="2">
+<a href="txmt://open?url=file:///usr/bin/merb&amp;line=1">1</a>#!/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/bin/ruby
+
+<a href="txmt://open?url=file:///usr/bin/merb&amp;line=2">2</a>#
+
+<a href="txmt://open?url=file:///usr/bin/merb&amp;line=3">3</a># This file was generated by RubyGems.
+
+<a href="txmt://open?url=file:///usr/bin/merb&amp;line=4">4</a>#
+
+<a href="txmt://open?url=file:///usr/bin/merb&amp;line=5">5</a># The application 'merb-core' is installed as part of a gem, and
+					</td>
+				</tr>
+			</tbody>
+	</table>
+	<script type="text/javascript" charset="utf-8">
+		// swap the open & closed classes
+		els = document.getElementsByTagName('td');
+		for(i=0; i<els.length; i++){
+			if(els[i].className=='expand' || els[i].className=='collapse'){
+				els[i].onclick = function(e){
+					tbody = this.parentNode.parentNode;
+					if(tbody.className=='open'){
+						tbody.className='closed';
+					}else{
+						tbody.className='open';
+					}
+				}
+			}
+		}
+	</script>
+
+      </div>
+      <div class="bot_shadow">&nbsp;</div>
+    </div>
+  <div id="right">
+    
+  </div>
+  <br style="clear: both;">
+  <div id="footer">
+    <p>
+      <strong>Feather is a thing by <a href="http://www.bloggingmyassoff.com">Michael Leung</a> and <a href="http://crazycool.co.uk">Elliott Draper</a></strong>
+    </p>
+    <br style="clear: both;">
+  </div>
+</body>
+</html>
