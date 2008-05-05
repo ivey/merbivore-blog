@@ -13,4 +13,7 @@
 
 :production:
   <<: *defaults
-  :database: merbivore_blog_prod
+  :database: merbivoreblog_prod
+  :host: mysql50-3-master
+  :username: merbivore_db
+  :password: p6Uswasw
