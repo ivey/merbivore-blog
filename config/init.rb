@@ -9,9 +9,9 @@ Merb::Config.use do |c|
   
   ### Sets up a custom session id key, if you want to piggyback sessions of other applications
   ### with the cookie session store. If not specified, defaults to '_session_id'.
-  # c[:session_id_key] = '_session_id'
+  c[:session_id_key] = '_bsession_id'
   
-  c[:session_secret_key]  = '56640eca0bd537b75c2366fd22e6744072cd7891'
+  c[:session_secret_key]  = 'merb2132132321321cookie'
   c[:session_store] = 'cookie'
   c[:use_mutex] = false
   
