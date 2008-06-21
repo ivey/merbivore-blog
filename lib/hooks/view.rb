@@ -10,6 +10,7 @@ module Hooks
       ##
       # This returns true if the specified plugin has views registered, false otherwise
       def has_views_registered?(plugin)
+        @view_hooks ||= {}
         @view_hooks.include?(plugin.id)
       end
 
@@ -60,7 +61,7 @@ module Hooks
       ##
       # This removes any view hooks for the specified plugin
       def remove_plugin_hooks(id)
-        @view_hooks.delete(id)
+        @view_hooks.delete(id) unless @view_hooks.nil? || @view_hooks.empty?
       end
     end
   end

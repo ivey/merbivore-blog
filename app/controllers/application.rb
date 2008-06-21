@@ -5,6 +5,13 @@ class Application < Merb::Controller
   before :get_settings
   before :load_plugins
   before :fire_before_event
+  before :fix_cache_issue_with_merb_093
+  
+  ##
+  # This just makes sure that params[:format] isn't null, to get around the merb 0.9.3 cache issue
+  def fix_cache_issue_with_merb_093
+    params[:format] = [] if params[:format].nil?
+  end
 
   ##
   # This grabs settings
@@ -15,7 +22,9 @@ class Application < Merb::Controller
   ##
   # This ensures all plugins are loaded before any requests are dealt with - if one of the other server processes in a cluster adds one, it needs to be picked up
   def load_plugins
-    Plugin.all.each do |plugin|
+    # Loop through all plugins by name
+    Plugin.all(:order => [:name]).each do |plugin|
+      # Load the plugin
       plugin.load unless plugin.loaded?
     end
   end

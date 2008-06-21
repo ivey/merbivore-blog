@@ -40,18 +40,26 @@ use_orm :datamapper
 ### merb.
 ###
 # use_test :test_unit
-use_test :rspec
+use_test :rspec, "merb_stories"
 
 ### Add your other dependencies here
 
 # These are some examples of how you might specify dependencies.
 # 
+gem "archive-tar-minitar"
 dependencies "merb_helpers"
 dependencies "merb-assets"
 dependencies "merb-cache"
+dependency "merb_helpers"
+dependency "merb-assets"
+dependency "merb-cache"
 dependency "merb-action-args"
 dependency "merb-mailer"
-dependency "merb_stories" if Merb.environment == "test"
+dependency 'merb_paginate'
+dependency "dm-aggregates"
+dependency "dm-validations"
+dependency "dm-timestamps"
+
 # OR
 # OR
 # dependencies "RedCloth" => "> 3.0", "ruby-aes-cext" => "= 1.0"
@@ -62,13 +70,17 @@ Merb::BootLoader.after_app_loads do
   require "uri"
   require "cgi"
   require "erb"
+  require "zlib"
+  require "stringio"
+  require "archive/tar/minitar"
   require File.join("lib", "padding")
   require File.join("lib", "hooks")
   require File.join("lib", "database")
+  require File.join("lib", "plugin_dependencies")
 
   # This loads the plugins
   begin
-    Plugin.all.each do |p|
+    Plugin.all(:order => [:name]).each do |p|
       begin
         p.load
         Merb.logger.info("\"#{p.name}\" loaded")

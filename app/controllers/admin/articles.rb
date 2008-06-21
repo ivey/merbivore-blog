@@ -3,7 +3,7 @@ module Admin
     before :find_article, :only => %w(edit update delete show)
 
     def index
-      @articles = Article.all(:order => "created_at DESC")
+      @articles = Article.paginate(:page => params[:page], :per_page => 10, :order => [:created_at.desc])
       display @articles
     end
     
@@ -18,6 +18,7 @@ module Admin
     
     def create(article)
       @article = Article.new(article)
+      @article.published = true if @article.published == "1"
       @article.user_id = self.current_user.id
       if @article.save
         # Expire the article index to reflect the newly published article
@@ -37,6 +38,7 @@ module Admin
     end
     
     def update(article)
+      article["published"] = true if article["published"] == "1"
       if @article.update_attributes(article)
         # Expire the index and article to reflect the updated article
         expire_index
@@ -52,7 +54,7 @@ module Admin
     end
     
     def delete
-      @article.destroy!
+      @article.destroy
       # Expire the index and article to reflect the removal of the article
       expire_index
       expire_article(@article)

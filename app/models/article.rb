@@ -1,30 +1,37 @@
-class Article < DataMapper::Base  
-  property :title, :string, :nullable => false, :length => 255
-  property :content, :text, :nullable => false
-  property :created_at, :datetime
-  property :published_at, :datetime
-  property :user_id, :integer, :nullable => false
-  property :permalink, :string, :length => 255
-  property :published, :boolean, :default => false
-  property :formatter, :string, :default => "default"
-  validates_presence_of :title, :key => "uniq_title"
-  validates_presence_of :content, :key => "uniq_content"
-  validates_presence_of :user_id, :key => "uniq_user_id"
+class Article  
+  include DataMapper::Validate
+  include MerbPaginate::Finders::Datamapper
+  include DataMapper::Resource
+  
+  property :id, Integer, :key => true, :serial => true
+  property :title, String, :nullable => false, :length => 255
+  # was TEXT, should be TEXT again
+  property :content, String, :nullable => false
+  property :created_at, DateTime
+  property :published_at, DateTime
+  property :user_id, Integer, :nullable => false
+  property :permalink, String, :length => 255
+  property :published, Boolean, :default => false
+  property :formatter, String, :default => "default"
+  
+  validates_present :title, :key => "uniq_title"
+  validates_present :content, :key => "uniq_content"
+  validates_present :user_id, :key => "uniq_user_id"
   
   belongs_to :user
   
   # Core filters
-  before_save :set_published_permalink
-  after_create :set_create_activity
-  after_update :set_update_activity
+  before :save, :set_published_permalink
+  after :create, :set_create_activity
+  after :update, :set_update_activity
   
   # Event hooks for plugins
-  before_create :fire_before_create_event
-  before_update :fire_before_update_event
-  before_save :fire_before_save_event
-  after_create :fire_after_create_event
-  after_update :fire_after_update_event
-  after_save :fire_after_save_event
+  before :create, :fire_before_create_event
+  before :update, :fire_before_update_event
+  before :save, :fire_before_save_event
+  after :create, :fire_after_create_event
+  after :update, :fire_after_update_event
+  after :save, :fire_after_save_event
   
   ##
   # This sets the published date and permalink when an article is published
@@ -33,8 +40,9 @@ class Article < DataMapper::Base
     if self.is_published?
       # Set the date, only if we haven't already
       self.published_at = Time.now if self.published_at.nil?
+      
       # Set the permalink, only if we haven't already
-      self.permalink = "/#{self.published_at.year}/#{Padding::pad_single_digit(self.published_at.month)}/#{Padding::pad_single_digit(self.published_at.day)}/#{self.title.downcase.gsub(/[^a-z0-9]+/i, '-')}" if self.permalink.nil?
+      self.permalink = create_permalink
     end
     true
   end
@@ -56,7 +64,7 @@ class Article < DataMapper::Base
   end
 
   def fire_before_update_event
-    Hooks::Events.before_update_article(self)
+    Hooks::Events.before_update_article(self) unless new_record?
   end
 
   def fire_before_save_event
@@ -69,7 +77,7 @@ class Article < DataMapper::Base
   end
   
   def fire_after_update_event
-    Hooks::Events.after_update_article(self)
+    Hooks::Events.after_update_article(self) unless new_record?
   end
 
   def fire_after_save_event
@@ -79,7 +87,21 @@ class Article < DataMapper::Base
 
   def is_published?
     # We need this beacuse the values get populated from the params
-    self.published == "1"
+    self.published == "1" || self.published
+  end
+  
+  def create_permalink
+    permalink = Configuration.current.permalink_format.gsub(/:year/,self.published_at.year.to_s)
+    permalink.gsub!(/:month/,Padding::pad_single_digit(self.published_at.month))
+    permalink.gsub!(/:day/,Padding::pad_single_digit(self.published_at.day))
+    
+    title = self.title.gsub(/\W+/, ' ') # all non-word chars to spaces
+    title.strip!            # ohh la la
+    title.downcase!         #
+    title.gsub!(/\ +/, '-') # spaces to dashes, preferred separator char everywhere
+    permalink.gsub!(/:title/,title)
+    
+    permalink
   end
 
   class << self
@@ -87,22 +109,22 @@ class Article < DataMapper::Base
     # Custom finders
 
     def find_recent
-      self.all(:published => true, :limit => 10, :order => "published_at DESC")
+      self.all(:published => true, :limit => 10, :order => [:published_at.desc])
     end
 
     def find_by_year(year)
-      self.all(:published_at.like => "#{year}%", :published => true, :order => "published_at DESC")
+      self.all(:published_at.like => "#{year}%", :published => true, :order => [:published_at.desc])
     end
 
     def find_by_year_month(year, month)
       month = Padding::pad_single_digit(month)
-      self.all(:published_at.like => "#{year}-#{month}%", :published => true, :order => "published_at DESC")
+      self.all(:published_at.like => "#{year}-#{month}%", :published => true, :order => [:published_at.desc])
     end
 
     def find_by_year_month_day(year, month, day)
       month = Padding::pad_single_digit(month)
       day = Padding::pad_single_digit(day)
-      self.all(:published_at.like => "#{year}-#{month}-#{day}%", :published => true, :order => "published_at DESC")
+      self.all(:published_at.like => "#{year}-#{month}-#{day}%", :published => true, :order => [:published_at.desc])
     end
 
     def find_by_permalink(permalink)
